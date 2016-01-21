@@ -16,14 +16,22 @@
             <table class="table event-list-table" ng-controller="EventListCtrl as ctrl">
                 <thead>
                 <tr>
-                    <td colspan="3">{{ctrl.listTitle}}</td>
+                    <td colspan="3" >{{ctrl.listTitle}}</td>
                 </tr>
                 </thead>
-                <tr>
-                    <td><img src="http://lorempixel.com/320/240/nightlife/" alt=""/></td>
-                    <td>Get together</td>
-                    <td>12.03.2016</td>
+                <tbody>
+                <tr class="row" ng-repeat="el in ctrl.eventList">
+                    <td class="col-xs-2"><img class="event-img" src="{{el.img}}" alt=""/></td>
+                    <td class="col-xs-6">{{el.name}} ({{el.count}})</td>
+                    <td class="col-xs-2">{{el.date|niceDate}}</td>
+                    <td class="col-xs-2">
+                        <button class="btn btn-primary" ng-click="ctrl.addPeopleToEvent(el)">
+                            +
+                        </button>
+                    </td>
+
                 </tr>
+                </tbody>
             </table>
         </div>
     </div>
@@ -38,6 +46,7 @@
 <script src="libs/jquery.min.js"></script>
 <script src="libs/bootstrap/js/bootstrap.min.js"></script>
 <script src="libs/angular.min.js"></script>
+<script src="libs/moment.min.js"></script>
 
 <!--app JS-->
 <script src="js/main.js"></script>
