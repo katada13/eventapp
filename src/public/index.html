@@ -10,13 +10,13 @@
     <link rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
-<div class="container">
+<div class="container" ng-controller="EventListCtrl as ctrl">
     <div class="row">
         <div class="col-md-8 col-xs-12 col-md-offset-2">
-            <table class="table event-list-table" ng-controller="EventListCtrl as ctrl">
+            <table class="table event-list-table">
                 <thead>
                 <tr>
-                    <td colspan="3" >{{ctrl.listTitle}}</td>
+                    <td colspan="3">{{ctrl.listTitle}}</td>
                 </tr>
                 </thead>
                 <tbody>
@@ -37,7 +37,29 @@
     </div>
     <div class="row">
         <div class="col-md-8 col-xs-12 col-md-offset-2">
-            forma
+            <form>
+                <div class="form-group">
+                    <label for="imgUrl">Image URL</label>
+                    <input type="text" class="form-control" id="imgUrl" ng-model="ctrl.eventData.img">
+                </div>
+                <div class="form-group">
+                    <label for="eventName">Event name</label>
+                    <input type="text" class="form-control" id="eventName" ng-model="ctrl.eventData.name">
+
+                </div>
+                <div class="form-group">
+                    <label for="eventDate">Event date</label>
+                    <input type="date" class="form-control" id="eventDate" ng-model="ctrl.eventData.date">
+
+                </div>
+                <!--<div class="form-group">-->
+                <!--<label for="exampleInputFile">File input</label>-->
+                <!--<input type="file" id="exampleInputFile">-->
+                <!--<p class="help-block">Example block-level help text here.</p>-->
+                <!--</div>-->
+                <button type="submit" class="btn btn-default" ng-click="ctrl.addEvent()">Submit</button>
+                <button type="submit" class="btn btn-default" ng-click="ctrl.initEventData()">Reset</button>
+            </form>
         </div>
     </div>
 </div>

@@ -19,8 +19,23 @@ module.controller('EventListCtrl', [function () {
         date: new Date()
     }];
 
-    this.addPeopleToEvent = function (el){
+    this.initEventData = function () {
+        this.eventData = {};
+        this.eventData.img = "http://lorempixel.com/320/240/people/";
+        this.eventData.count = 0;
+    };
+
+    this.initEventData();
+
+    this.addPeopleToEvent = function (el) {
         el.count++;
+    };
+
+    this.addEvent = function () {
+        this.eventList.push(this.eventData);
+        console.log(this.eventData.date);
+        this.initEventData();
+
     };
 
 }]);
