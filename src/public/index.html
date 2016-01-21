@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="EventApp">
 <head>
     <meta charset="UTF-8">
     <title>EventApp</title>
@@ -7,13 +7,24 @@
     <!-- libs CSS -->
     <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.css"/>
     <!-- app CSS -->
-
+    <link rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-xs-12 col-md-offset-2">
-            Event List
+            <table class="table event-list-table" ng-controller="EventListCtrl as ctrl">
+                <thead>
+                <tr>
+                    <td colspan="3">{{ctrl.listTitle}}</td>
+                </tr>
+                </thead>
+                <tr>
+                    <td><img src="http://lorempixel.com/320/240/nightlife/" alt=""/></td>
+                    <td>Get together</td>
+                    <td>12.03.2016</td>
+                </tr>
+            </table>
         </div>
     </div>
     <div class="row">
@@ -24,8 +35,11 @@
 </div>
 
 <!--libs JS-->
+<script src="libs/jquery.min.js"></script>
 <script src="libs/bootstrap/js/bootstrap.min.js"></script>
-<!--app JS-->
+<script src="libs/angular.min.js"></script>
 
+<!--app JS-->
+<script src="js/main.js"></script>
 </body>
 </html>
