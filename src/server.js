@@ -8,7 +8,6 @@ app.get('/user/12345', function (req, res) {
 
 app.use("/", express.static('src/public'));
 
-
 app.listen(3000, function () {
     console.log('Example app listening on port 3000!');
 });
